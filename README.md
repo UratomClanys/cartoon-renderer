@@ -4,7 +4,7 @@ A small real-time cartoon rendering test project made in Unity.
 
 This project explores stylized character rendering through simplified lighting, color grouping, outlines, and post-processing. The main goal is to study how anime / illustration-like visuals can be reproduced in a real-time 3D environment.
 
-[中文](#中文版)
+[中文](#中文)
 
 ---
 
@@ -99,7 +99,7 @@ Unless otherwise stated, project assets should not be redistributed or used comm
 
 ---
 
-# 中文版
+# 中文
 
 这是一个使用 Unity 制作的实时卡通渲染测试项目。
 

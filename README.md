@@ -2,9 +2,9 @@
 
 A small real-time cartoon rendering test project made in Unity.
 
-This project explores stylized character rendering through simplified lighting, color grouping, outlines, and post-processing. The main goal is to study how anime / illustration-like visuals can be reproduced in a real-time 3D environment.
+This project explores stylized character rendering through simplified lighting, color grouping, graphic shadow shapes, outlines, stylized materials, and post-processing. The main goal is to study how real-time 3D rendering can be pushed closer to the visual language of 2D animation and illustration.
 
-[中文](#中文)
+[中文版本](#中文版)
 
 ---
 
@@ -14,6 +14,7 @@ The current rendering experiments mainly focus on:
 
 - Cel / Toon Shading
 - Simplified light and shadow grouping
+- Graphic color blocking
 - Character outlines
 - Controlled color ranges
 - Stylized material response
@@ -24,43 +25,76 @@ The project is currently used as a visual testbed rather than a finished game.
 
 ## Rendering Goals
 
-Instead of pursuing physically realistic materials, this project focuses on controlling how information is presented visually.
+Instead of pursuing physically realistic materials, this project focuses on controlling how visual information is presented.
 
-The renderer aims to reduce unnecessary lighting details and organize the image into clearer graphic shapes, making the final result closer to 2D animation and illustration.
-
-Some of the main areas being tested include:
+The renderer aims to reduce unnecessary lighting detail and reorganize the image into clearer graphic regions, allowing the final result to feel closer to 2D animation, illustration, and concept art.
 
 ### Shadow Simplification
 
-Lighting is reduced into a limited number of clear tonal regions instead of continuous realistic shading.
+Continuous lighting is reduced into a limited number of clear tonal regions.
+
+The shape of the shadow is treated as part of the visual design rather than only as a physically accurate lighting result.
 
 ### Color Control
 
-Material colors are adjusted to maintain a stable and readable palette under different lighting conditions.
+Material colors are adjusted to preserve a stable and readable palette under different lighting conditions.
+
+The goal is to keep the character's local colors and overall color relationships consistent.
+
+### Graphic Color Blocking
+
+Large color areas are simplified and organized into clear shapes.
+
+This helps reduce small surface details and creates a flatter, more illustration-like image.
 
 ### Outline Rendering
 
-Outlines are used to strengthen silhouettes and important internal forms.
+Outlines are used to strengthen silhouettes and improve readability against complex backgrounds.
+
+Internal lines may also be introduced selectively to reinforce important forms.
 
 ### Stylized Materials
 
-Materials are designed around the final visual result rather than physically accurate surface properties.
+Materials are designed around the final visual result rather than strict physical accuracy.
+
+Different surfaces can use different rendering logic, including:
+
+- Skin
+- Hair
+- Cloth
+- Metal
+- Eyes
+- Emissive / Unlit materials
 
 ### Post Processing
 
-Post-processing is used to further unify the image and control contrast, color, and overall presentation.
+Post-processing is used to unify the final image and control:
 
-## Screenshots
+- Contrast
+- Color balance
+- Tonal hierarchy
+- Overall mood
+- Final visual consistency
 
-> Screenshots and comparison images will be added as the project develops.
+---
 
-<!-- Example:
-![Render Preview](Screenshots/render-preview.png)
--->
+## Before / After
+
+A comparison between the original Unity rendering and the current stylized rendering result.
+
+| Before | After |
+| --- | --- |
+| ![Before](Screenshots/before.png) | ![After](Screenshots/after.png) |
+
+The current renderer simplifies continuous lighting into clear graphic regions and reduces unnecessary surface detail.
+
+The goal is not to reproduce physically realistic lighting, but to control the visual hierarchy of the image and move the result closer to 2D animation and illustration.
+
+---
 
 ## Status
 
-🚧 Work in Progress
+🚧 **Work in Progress**
 
 This repository currently contains rendering experiments and visual tests.
 
@@ -69,21 +103,25 @@ Shaders, materials, lighting setups, and post-processing settings may change fre
 ## Built With
 
 - Unity
-- Shader-based real-time rendering
-- Git LFS for large assets
+- Real-time shader rendering
+- Toon / Cel Shading
+- Post Processing
+- Git LFS
 
 ## Future Experiments
 
 Planned areas of exploration include:
 
-- More stable face and hair shading
-- Better control of shadow shapes
+- More stable face shading
+- Better hair shading
+- Improved shadow shape control
 - Directional face lighting
-- Improved outline behavior
+- More consistent outline behavior
 - Material-specific toon shading
-- Emissive / unlit material experiments
+- Emissive / Unlit material experiments
 - More consistent rendering across different environments
 - Character-focused lighting setups
+- More illustration-like shadow design
 
 ## Author
 
@@ -95,15 +133,15 @@ Concept Art / Character Design / Stylized Rendering
 
 This project is currently intended for personal research and portfolio use.
 
-Unless otherwise stated, project assets should not be redistributed or used commercially without permission.
+Unless otherwise stated, original project assets should not be redistributed or used commercially without permission.
 
 ---
 
-# 中文
+# 中文版
 
 这是一个使用 Unity 制作的实时卡通渲染测试项目。
 
-项目主要用于研究风格化角色渲染，包括光影归纳、颜色控制、描边、材质表现以及后期处理等内容。
+项目主要用于研究风格化角色渲染，包括光影归纳、颜色控制、图形化色块、描边、材质表现以及后期处理等内容。
 
 项目的目标并不是追求物理真实感，而是尝试让实时 3D 画面更加接近二维动画、插画以及角色原画中的视觉表现。
 
@@ -115,6 +153,7 @@ Unless otherwise stated, project assets should not be redistributed or used comm
 
 - Cel / Toon Shading 卡通渲染
 - 光影归纳
+- 图形化色块
 - 角色轮廓描边
 - 色彩范围控制
 - 风格化材质表现
@@ -127,9 +166,7 @@ Unless otherwise stated, project assets should not be redistributed or used comm
 
 这个项目并不以 PBR 或真实材质表现为主要目标，而是更关注如何控制画面中的视觉信息。
 
-通过减少不必要的光照细节，将阴影、颜色以及材质表现归纳为更加明确的图形区域，使最终画面更接近二维动画和插画。
-
-目前主要研究以下几个方向：
+通过减少不必要的光照细节，将阴影、颜色以及材质表现归纳为更加明确的图形区域，使最终画面更接近二维动画、插画和概念设计中的视觉语言。
 
 ### 光影归纳
 
@@ -141,11 +178,17 @@ Unless otherwise stated, project assets should not be redistributed or used comm
 
 控制材质在不同光照环境下的颜色变化，使角色能够保持相对稳定的固有色和整体色彩关系。
 
+### 图形化色块
+
+将复杂的表面明暗进一步压缩为较大的色彩区域。
+
+通过减少细碎的材质信息，让画面呈现更明确的平面构成和插画感。
+
 ### 轮廓描边
 
 通过轮廓线强化角色剪影，并提高角色在复杂背景中的可读性。
 
-同时尝试控制部分内部结构线，使模型呈现更接近二维绘画的视觉效果。
+同时尝试选择性地保留部分内部结构线，使模型呈现更接近二维绘画的视觉效果。
 
 ### 风格化材质
 
@@ -158,7 +201,7 @@ Unless otherwise stated, project assets should not be redistributed or used comm
 - 布料
 - 金属
 - 眼睛
-- 发光材质
+- 发光 / Unlit 材质
 
 ### 后期处理
 
@@ -170,25 +213,25 @@ Unless otherwise stated, project assets should not be redistributed or used comm
 - 画面整体色调
 - 最终视觉统一
 
-## 截图
+---
 
-> 随着项目继续开发，这里会加入更多效果截图和对比图。
+## Before / After 对比
 
-<!-- 示例：
-![Render Preview](Screenshots/render-preview.png)
--->
+普通 Unity 渲染与当前卡通渲染效果的对比。
 
-后续计划加入类似：
+| Before / 原始渲染 | After / 卡通渲染 |
+| --- | --- |
+| ![Before](Screenshots/before.png) | ![After](Screenshots/after.png) |
 
-```text
-Standard Rendering → Cartoon Renderer
-```
+目前的渲染方式会将连续的光照关系进一步归纳成明确的色块，并减少模型表面不必要的明暗细节。
 
-的 Before / After 对比，用于展示普通渲染与卡通渲染之间的差异。
+目标并不是模拟真实世界中的光照，而是主动控制画面的视觉层级，使最终效果更加接近二维动画与插画。
+
+---
 
 ## 当前状态
 
-🚧 开发 / 测试中
+🚧 **开发 / 测试中**
 
 目前仓库主要包含渲染实验和视觉测试内容。
 
@@ -208,6 +251,7 @@ Shader、材质、灯光配置以及后期处理参数都可能随着测试持�
 
 - 更稳定的角色面部阴影
 - 头发明暗归纳
+- 更可控的阴影形状
 - 面部定向光照
 - 更自然的轮廓线表现
 - 不同材质对应不同 Toon Shader

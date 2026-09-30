@@ -84,7 +84,7 @@ A comparison between the original Unity rendering and the current stylized rende
 
 | Before | After |
 | --- | --- |
-| ![Before](Screenshots/before.png) | ![After](Screenshots/after.png) |
+| ![Before](Screenshots:before.png) | ![After](Screenshots:after.png) |
 
 The current renderer simplifies continuous lighting into clear graphic regions and reduces unnecessary surface detail.
 
@@ -221,7 +221,7 @@ Unless otherwise stated, original project assets should not be redistributed or 
 
 | Before / 原始渲染 | After / 卡通渲染 |
 | --- | --- |
-| ![Before](Screenshots/before.png) | ![After](Screenshots/after.png) |
+| ![Before](Screenshots:before.png) | ![After](Screenshots:after.png) |
 
 目前的渲染方式会将连续的光照关系进一步归纳成明确的色块，并减少模型表面不必要的明暗细节。
 
